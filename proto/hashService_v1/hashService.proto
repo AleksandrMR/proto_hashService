@@ -4,7 +4,7 @@ package hashService_v1;
 
 import "google/api/annotations.proto";
 
-option go_package = "github.com/AleksandrMR/protos_hashService/gen/hashService_v1;hashService_v1";
+option go_package = "github.com/AleksandrMR/proto_hashService/gen/hashService_v1;hashService_v1";
 
 
 // The HashService definition.
