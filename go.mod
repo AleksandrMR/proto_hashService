@@ -1,4 +1,4 @@
-module protos-hashService
+module github.com/AleksandrMR/proto_hashService
 
 go 1.21.3
 
