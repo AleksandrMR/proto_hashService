@@ -12,7 +12,7 @@ After which the necessary dependencies will be pulled up and the necessary contr
 ---
 **NOTE**
 
-If you change the version in the .proto file, don't forget to change the version in the Makefile as well.
+If you change the version in the .proto file, or create a new version of the .proto file for which new contracts need to be generated, be sure to also change the version in the Makefile.
 
 ---
 
