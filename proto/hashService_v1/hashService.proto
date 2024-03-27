@@ -1,0 +1,60 @@
+syntax = "proto3";
+
+package hashService_v1;
+
+import "google/api/annotations.proto";
+
+option go_package = "github.com/AleksandrMR/protos_hashService/gen/hashService_v1;hashService_v1";
+
+
+// The HashService definition.
+service HashService {
+  // Checks if the payload's hash already exists.
+  rpc CheckHash(CheckHashRequest) returns (CheckHashResponse) {
+    option (google.api.http) = {
+      get: "/hashService/v1/checkHash"
+    };
+  }
+  // Returns the hash for an existing payload.
+  rpc GetHash(GetHashRequest) returns (GetHashResponse) {
+    option (google.api.http) = {
+      get: "/hashService/v1/getHash"
+    };
+  }
+  // Creates and stores a hash for a new payload.
+  rpc CreateHash(CreateHashRequest) returns (CreateHashResponse) {
+    option (google.api.http) = {
+      post: "/hashService/v1/createHash"
+    };
+  }
+}
+
+// Request message for CheckHashRequest
+message CheckHashRequest {
+  string payload = 1;
+}
+
+// Response message for CheckHashResponse
+message CheckHashResponse {
+  bool hashExist = 1;
+}
+
+// Request message for GetHashRequest
+message GetHashRequest {
+  string payload = 1;
+}
+
+// Response message for GetHashResponse
+message GetHashResponse {
+  string hash = 1;
+}
+
+// Request message for CreateHashRequest
+message CreateHashRequest {
+  string payload = 1;
+}
+
+// Response message for CreateHashResponse
+message CreateHashResponse {
+  bool hashCreated = 1;
+}
